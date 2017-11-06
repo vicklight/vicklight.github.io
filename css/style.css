@@ -62,17 +62,7 @@ a:hover, .navbar-default .navbar-nav > .active > a:focus {
 .listcon{
     margin-bottom: 10px;
 }
-button{
-    background-color: darkorange;
-    color: white;
 
-}
 
-.but > div{
-    display: inline-block;
 
-}
-.con > div{
-    display: inline-block;
 
-}
