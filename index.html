@@ -4,46 +4,220 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>VivaXD Player</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <style>
+        * {
+            margin:0;
+            padding:0;
+            font-family: "Segoe UI";
+            box-sizing:border-box;
+            -o-box-sizing:border-box;
+            -ms-box-sizing:border-box;
+            -moz-box-sizing:border-box;
+            -webkit-box-sizing:border-box;
+        }
+        nav{
+            width:100%;
+        }
+        nav ul li a {
+            color: #FFF;
+            text-decoration: none;
+        }
+        nav ul {
+            background-color: #2471CE;
+        }
+        nav ul > li {
+            padding: 15px;
+            display: inline-block;
+            transition: all .3s ease;
+            margin-left: -5px
+        }
+        nav ul > li:hover {
+            background-color: #FCA94F
+        }
+
+        nav ul > li:last-of-type a .fa {
+            font-size: 21px
+        }
+
+
         body{
             margin-top:160px;
         }
         #playingvideo{
 
             position: fixed;
-            top:0px;
+            top:50px;
             width:100%;
         }
-        @media screen and (max-width: 700px ) and (min-width: 317px){
-            body {
-                background-color: #154177;
-                margin-top:60%;
-            }
-            #playingvideo{
+        .header{
+            position: fixed;
+            top: 0px;
+            width: 100%;
 
             }
-            #playingvideo video{
-                width:100%;
-                height:100%;
+        @media screen and (max-width: 500px ) and (min-width: 380px) {
+            body {
+                background-color: #FFFFFF;
+                margin-top: 60%;
+            }
+
+            #playingvideo {
+
+            }
+
+            #playingvideo video {
+                width: 100%;
+            }
+
+            #videos {
+                margin-top: 300px;
+                width: 100%;
+                height: 100%;
+            }
+
+            #videos > div > div > video {
+                width: 20%;
+                margin-left: 6px;
+                height: 47%;
+            }
+
+            .container {
+                width: 100%;
+                height: 60px;
+            }
+
+            .container .videocont {
+                float: left;
+                width: 45%;
+                height: 250px;
+                margin: 9px;
+            }
+
+            .vid {
+                padding-top: 0px;
+            }
+
+            .caption {
+                background-color: #154177;
+                color: #FFFFFF;
+                padding: 5px;
+                height: 40%;
+
+            }
+            input[type=text], textarea {
+                background-color: #FCA94F;
+                width: 100%;
+                padding: 12px 20px;
+                margin: 8px 0;
+                display: inline-block;
+                border: 1px solid #ccc;
+                border-radius: 4px;
+                box-sizing: border-box;
+            }
+
+            input[type=submit] {
+                width: 30%;
+                background-color: #2471CE ;
+                color: white;
+                padding: 14px 20px;
+                margin: 8px 0;
+                border: none;
+                border-radius: 100px;
+                cursor: pointer;
+            }
+
+            input[type=submit]:hover {
+                background-color: #154177;
+            }
+            .form{
+                margin-top: 20px;
+                border-radius: 5px;
+                padding: 20px;
+            }
+        }
+            @media screen and (max-width: 380px ) and (min-width: 300px){
+                body {
+                    background-color: #FFFFFF;
+                    margin-top:60%;
+                }
+                #playingvideo{
+
+                }
+                #playingvideo video {
+                width: 100%;
             }
             #videos{
+                margin-top:260px;
                 width:100%;
                 height:100%;
             }
 
-            #videos video{
-                width:46.9%;
+            #videos > div > div > video{
+                width:20%;
                 margin-left:6px;
                 height:47%;
             }
+                .container{
+                    width: 100%;
+                    height: 60px;
+                }
+
+                .container .videocont{
+                    float:left;
+                    width:45%;
+                    height:250px;
+                    margin: 7px;
+                }
+                .vid{
+                    padding-top: 0px;
+                }
+                .caption{
+                    background-color: #154177;
+                    color: #FFFFFF;
+                    padding: 5px;
+                    height:40%;
+
+                }
+                input[type=text], textarea {
+                    background-color: #FCA94F;
+                    width: 100%;
+                    padding: 12px 20px;
+                    margin: 8px 0;
+                    display: inline-block;
+                    border: 1px solid #ccc;
+                    border-radius: 4px;
+                    box-sizing: border-box;
+                }
+
+                input[type=submit] {
+                    width: 40%;
+                    background-color: #2471CE ;
+                    color: white;
+                    padding: 14px 20px;
+                    margin: 8px 0;
+                    border: none;
+                    border-radius: 100px;
+                    cursor: pointer;
+                }
+
+                input[type=submit]:hover {
+                    background-color: #154177;
+                }
+                .form{
+                    margin-top: 20px;
+                    border-radius: 5px;
+                    padding: 20px;
+                }
+
 
         }
-        @media screen and (max-width: 316px) {
+        @media screen and (max-width: 300px) and (min-width: 100px) {
             body {
-                background-color: #154177;
-                margin-top:60%;
-
+                background-color: #FFFFFF;
+                height:100%;
             }
+
             #playingvideo{
                 margin-top:0px;
                 width:100%;
@@ -53,50 +227,179 @@
                 height:100%;
             }
             #videos{
+                margin-top:200px;
                 width:100%;
                 height:100%;
             }
-            #videos video{
-                width:46%;
+            #videos > div > div > video{
+                width:20%;
                 margin-left:6px;
                 height:47%;
             }
 
+            .container{
+                width: 100%;
+                height: 60px;
+            }
+
+            .container .videocont{
+                float:left;
+                width:45%;
+                height:250px;
+                margin: 7px;
+            }
+            .caption{
+                background-color: #154177;
+                color: #FFFFFF;
+                padding: 5px;
+                height:40%;
+
+            }
+            input[type=text], textarea {
+                background-color: #FCA94F;
+                width: 100%;
+                padding: 12px 20px;
+                margin: 8px 0;
+                display: inline-block;
+                border: 1px solid #ccc;
+                border-radius: 4px;
+                box-sizing: border-box;
+            }
+
+            input[type=submit] {
+                width: 45%;
+                background-color: #2471CE ;
+                color: white;
+                padding: 14px 20px;
+                margin: 8px 0;
+                border: none;
+                border-radius: 100px;
+                cursor: pointer;
+            }
+
+            input[type=submit]:hover {
+                background-color: #154177;
+            }
+            .form{
+                margin-top: 20px;
+                border-radius: 5px;
+                padding: 20px;
+            }
+
+
         }
+
+
 
     </style>
 
 </head>
 <body>
+<header class="header">
+    <nav>
+        <ul>
+            <li><a href="#">Home </a></li>
+            <li><a href="#">Hollywood </a></li>
+            <li><a href="#">Nollywood</a></li>
+            <li><a href="#">Bollywood</a></li>
+        </ul>
+    </nav>
+
+
+</header>
 <div id="playingvideo">
     <video controls id='vids'src="vid/---Ed%20Sheeran%20-%20Shape%20of%20You%20%5B144%5D%20-%20YouTube.mp4" >
     </video>
 </div>
 <div id="videos">
-    <video width="320" height="240" controls onplay="clicked(this)"
-           src="vid/Davido%20-%20FIA%20(Official%20Video).mp4" title="stranger" >
-    </video>
-    <video width="320" height="240" controls onplay="clicked(this)"
-           src="vid/---Ed%20Sheeran%20-%20Shape%20of%20You%20%5B144%5D%20-%20YouTube.mp4">
-    </video>
-    <video width="320" height="240" controls onplay="clicked(this)"
-           src="vid/Davido%20-%20FIA%20(Official%20Video).mp4">
-    </video>
-    <video width="320" height="240" controls onplay="clicked(this)"
-           src="vid/---Ed%20Sheeran%20-%20Shape%20of%20You%20%5B144%5D%20-%20YouTube.mp4">
-    </video>
-    <video width="320" height="240" controls onplay="clicked(this)"
-           src="vid/Davido%20-%20FIA%20(Official%20Video).mp4">
-    </video>
-    <video width="320" height="240" controls onplay="clicked(this)"
-           src="vid/---Ed%20Sheeran%20-%20Shape%20of%20You%20%5B144%5D%20-%20YouTube.mp4">
-    </video>
-    <video width="320" height="240" controls onplay="clicked(this)"
-           src="vid/Davido%20-%20FIA%20(Official%20Video).mp4">
-    </video>
-    <video width="320" height="240" controls onplay="clicked(this)"
-           src="vid/---Ed%20Sheeran%20-%20Shape%20of%20You%20%5B144%5D%20-%20YouTube.mp4">
-    </video>
+    <div class="container">
+        <div class="videocont">
+            <div class="vid">
+                <video  width="100%" height="140" controls onplay="clicked(this)"
+                    src="vid/Davido%20-%20FIA%20(Official%20Video).mp4">
+                </video>
+            </div>
+            <div class="caption">
+                <p>Official Video-Fia By Davido</p>
+            </div>
+        </div>
+        <div class="videocont">
+            <div class="vid">
+                <video  width="100%" height="140" controls onplay="clicked(this)"
+                    src="vid/---Ed%20Sheeran%20-%20Shape%20of%20You%20%5B144%5D%20-%20YouTube.mp4">
+                </video>
+            </div>
+            <div class="caption">
+                <p>Official Video-Shape of you By Ed Sheeran</p>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="videocont">
+            <div class="vid">
+                <video  width="100%" height="140" controls onplay="clicked(this)"
+                        src="vid/Davido%20-%20FIA%20(Official%20Video).mp4">
+                </video>
+            </div>
+            <div class="caption">
+                <p>Official Video-Fia By Davido</p>
+            </div>
+        </div>
+        <div class="videocont">
+            <div class="vid">
+                <video  width="100%" height="140" controls onplay="clicked(this)"
+                        src="vid/---Ed%20Sheeran%20-%20Shape%20of%20You%20%5B144%5D%20-%20YouTube.mp4">
+                </video>
+            </div>
+            <div class="caption">
+                <p>Official Video-Shape of you By Ed Sheeran</p>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="videocont">
+            <div class="vid">
+                <video  width="100%" height="140" controls onplay="clicked(this)"
+                        src="vid/Davido%20-%20FIA%20(Official%20Video).mp4">
+                </video>
+            </div>
+            <div class="caption">
+                <p>Official Video-Fia By Davido</p>
+            </div>
+        </div>
+        <div class="videocont">
+            <div class="vid">
+                <video  width="100%" height="140" controls onplay="clicked(this)"
+                        src="vid/---Ed%20Sheeran%20-%20Shape%20of%20You%20%5B144%5D%20-%20YouTube.mp4">
+                </video>
+            </div>
+            <div class="caption">
+                <p>Official Video-Shape of you By Ed Sheeran</p>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="videocont">
+            <div class="vid">
+                <video  width="100%" height="140" controls onplay="clicked(this)"
+                        src="vid/Davido%20-%20FIA%20(Official%20Video).mp4">
+                </video>
+            </div>
+            <div class="caption">
+                <p>Official Video-Fia By Davido</p>
+            </div>
+        </div>
+        <div class="videocont">
+            <div class="vid">
+                <video  width="100%" height="140" controls onplay="clicked(this)"
+                        src="vid/---Ed%20Sheeran%20-%20Shape%20of%20You%20%5B144%5D%20-%20YouTube.mp4">
+                </video>
+            </div>
+            <div class="caption">
+                <p>Official Video-Shape of you By Ed Sheeran</p>
+            </div>
+        </div>
+    </div>
 </div>
 <script>
     function clicked(event){
@@ -108,6 +411,7 @@
         playings.play();
 
 
+
     }
     function select1(){
         playings=document.getElementById('vids');
@@ -115,12 +419,25 @@
         playings.play();
     }
 
-
 </script>
     <footer>
-        <div>
-           <img width="100%" height="auto" src="img/logo.png">
+        <div class="form">
+            <form action="#">
+                <h4>Contact us</h4>
+                <br>
+                <label for="fullname">Full Name</label>
+                <input type="text" id="fullname" name="fullname" placeholder="Your name..">
+
+                <label for="email">Email</label>
+                <input type="text" id="email" name="email" placeholder="Your email..">
+
+                <label for="msg">Message</label>
+                <textarea id="msg" name="" placeholder="Send us a message"></textarea>
+
+                <input type="submit" value="Send">
+            </form>
         </div>
+
     </footer>
 </body>
 </html>
